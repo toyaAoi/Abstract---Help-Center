@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .h-22 {
+    height: 88px;
+  }
+
+  .s-icon {
+    height: 95px;
+    width: 95px;
+  }
+
+  .m-icon {
+    @apply h-16 w-16;
+  }
+}
+
+@layer components {
+  .trans-300 {
+    @apply transition-all duration-300;
+  }
+
+  .nav-link-screen {
+    @apply block py-5 hover:text-gray-400;
+  }
+
+  .component {
+    @apply flex gap-7 my-8;
+  }
+
+  .component-links {
+    @apply text-xl text-indigo-500 font-medium hover:underline;
+  }
+
+  .c-text {
+    @apply text-xl font-medium;
+  }
+
+  .bar {
+    @apply h-px w-7 bg-white absolute left-0;
+  }
+
+  .bar-top {
+    @apply -rotate-45 !top-3.5;
+  }
+
+  .bar-middle {
+    @apply opacity-0;
+  }
+
+  .bar-bottom {
+    @apply rotate-45 !top-3.5;
+  }
+
+  .bar-top,
+  .bar-middle,
+  .bar-bottom {
+    @apply h-0.5;
+  }
+}
+
+@layer base {
+  * {
+    @apply trans-300;
+  }
+
+  html {
+    font-family: "Helvetica", "Arial", "sans-serif";
+  }
+
+  .component > div > * + * {
+    @apply mt-4;
+  }
+
+  footer * {
+    @apply text-white;
+  }
+
+  footer h3 {
+    @apply text-2xl font-bold mb-4;
+  }
+
+  footer p:not(.c-text) {
+    @apply text-base font-bold hover:underline decoration-1;
+  }
+
+  footer h4 {
+    @apply text-base font-extrabold mt-8;
+  }
+}
